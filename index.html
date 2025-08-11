@@ -20,8 +20,8 @@
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#fff;color:#111;line-height:1.5}
     .wrap{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:48px 20px}
     .card{width:100%;max-width:780px;text-align:center;border:1px solid #eee;border-radius:20px;padding:32px 24px 28px;box-shadow:0 8px 24px rgba(0,0,0,.06);background:#fff}
-    .logo{width:min(360px,86vw);height:auto;margin:0 auto 18px;display:block}
-    h1{margin:6px 0 10px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
+    .logo{width:min(300px,80vw);height:auto;margin:0 auto 8px;display:block}
+    h1{margin:4px 0 6px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
     .lead{font-size:clamp(15px,2.6vw,18px);margin:0 auto 16px}
     .icon{display:inline-block;width:62px;height:62px;vertical-align:middle;margin:14px 0 8px}
     .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -38,19 +38,20 @@
       <img src="/logo.png" alt="Smart-security.cz logo" class="logo" />
       <h1>Stránky jsou ve výstavbě</h1>
       
+
 <svg class="icon" viewBox="0 0 96 64" aria-hidden="true" focusable="false">
+  <rect x="8" y="26" width="80" height="12" fill="#fff" stroke="#111" stroke-width="2"/>
+  <path d="M8 26h80v12H8z" fill="url(#stripes)" />
   <defs>
-    <linearGradient id="helmGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff5a5a"/>
-      <stop offset="1" stop-color="#cc0000"/>
-    </linearGradient>
+    <pattern id="stripes" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(-20)">
+      <rect width="6" height="12" fill="#cc0000"/>
+      <rect x="6" width="6" height="12" fill="#fff"/>
+    </pattern>
   </defs>
-  <path d="M18 46h36c6 0 10 2 12 4H12c2-2 6-4 6-4z" fill="#1a1a1a"/>
-  <path d="M14 40c0-18 13-30 30-30 11 0 20 5 25 14 3 5 4 10 4 16v0.5c4.5 0.5 7 3.5 7 6.5 0 1-0.2 2-0.5 3H18c-2.6 0-4-0.7-4-2.5 0-3 4-7 4-7z"
-        fill="url(#helmGrad)" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M24 34c4-10 14-16 24-16 8 0 14 3 18 8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
-  <path d="M20 41c2-6 8-14 18-17" fill="none" stroke="#8b0000" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+  <rect x="16" y="38" width="6" height="16" fill="#111"/>
+  <rect x="74" y="38" width="6" height="16" fill="#111"/>
 </svg>
+
 
       <p class="lead">Máte zájem o montáž nebo dodání kamerového systému? Zavolejte mi nebo napište a rád vám připravím nezávaznou nabídku.</p>
       <div class="links">
