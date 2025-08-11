@@ -23,7 +23,7 @@
     .logo{width:min(360px,86vw);height:auto;margin:0 auto 18px;display:block}
     h1{margin:6px 0 10px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
     .lead{font-size:clamp(15px,2.6vw,18px);margin:0 auto 16px}
-    .icon{display:inline-block;width:60px;height:60px;vertical-align:middle;margin:12px 0 8px}
+    .icon{display:inline-block;width:62px;height:62px;vertical-align:middle;margin:14px 0 8px}
     .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--red);color:#fff;background:var(--red);text-decoration:none;font-weight:600}
     .btn--outline{background:#fff;color:var(--red)}
@@ -38,21 +38,29 @@
       <img src="/logo.png" alt="Smart-security.cz logo" class="logo" />
       <h1>Stránky jsou ve výstavbě</h1>
 
-      <!-- Improved flat screwdriver icon -->
+      <!-- Metallic wrench (spanner) icon with subtle gradients -->
       <svg class="icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stop-color="#e60000"/>
-            <stop offset="1" stop-color="#b30000"/>
+          <linearGradient id="steel1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#e5e7eb"/>
+            <stop offset="0.45" stop-color="#c7cbd1"/>
+            <stop offset="1" stop-color="#9aa1aa"/>
+          </linearGradient>
+          <linearGradient id="steel2" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#d1d5db"/>
+            <stop offset="1" stop-color="#9ca3af"/>
           </linearGradient>
         </defs>
+        <!-- Head of the wrench -->
+        <path d="M18 10a12 12 0 0 1 17 10l-6 6 3 3 6-6a12 12 0 0 1 10 17l-8-8-6 6-18-18 6-6-4-4z" fill="url(#steel1)"/>
         <!-- Handle -->
-        <rect x="6" y="26" width="28" height="12" rx="6" fill="url(#g1)" />
-        <rect x="10" y="28" width="8" height="8" rx="3" fill="#ffffff" opacity=".25"/>
-        <!-- Shaft -->
-        <rect x="30" y="29" width="20" height="6" rx="3" fill="#222"/>
-        <!-- Tip -->
-        <path d="M58,32 l-6,6 h-4 l4-6 l-4-6 h4 z" fill="#444"/>
+        <rect x="9" y="35" width="30" height="8" rx="4" fill="url(#steel2)"/>
+        <!-- End cap (hole) -->
+        <circle cx="12" cy="39" r="2.2" fill="#7a828c"/>
+        <!-- Soft highlight -->
+        <path d="M22 14c6 2 9 7 7 9" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="1.4"/>
+        <!-- Soft shadow line -->
+        <path d="M15 40h22" fill="none" stroke="#6b7280" stroke-opacity=".4" stroke-width="1"/>
       </svg>
 
       <p class="lead">Máte zájem o montáž nebo dodání kamerového systému? Zavolejte mi nebo napište a rád vám připravím nezávaznou nabídku.</p>
@@ -63,7 +71,6 @@
       </div>
 
       <div class="contact">
-        <div><strong>Lukáš Kadleček</strong></div>
         <div>📞 <a href="tel:+420602783121">+420 602 783 121</a></div>
         <div>📧 <a href="mailto:info@smart-security.cz">info@smart-security.cz</a></div>
       </div>
