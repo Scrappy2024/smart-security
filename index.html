@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Smart-security.cz — Stránky jsou ve výstavbě</title>
-  <meta name="description" content="Smart-security.cz — Stránky jsou ve výstavbě. Kontaktujte nás pro nezávaznou nabídku nebo konzultaci ohledně kamerových systémů.">
+  <meta name="description" content="Stránky Smart-security.cz jsou ve výstavbě. Kontaktujte nás pro nezávaznou nabídku nebo konzultaci ohledně kamerových systémů.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#cc0000">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Smart-security.cz — Ve výstavbě">
+  <meta property="og:description" content="Máte zájem o montáž nebo dodání kamerového systému? Zavolejte nebo napište — rádi připravíme nezávaznou nabídku.">
+  <meta property="og:image" content="/logo.png">
+  <meta property="og:url" content="https://smart-security.cz/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
     :root{--red:#cc0000;--black:#111111;--gray:#6b7280;--bg:#ffffff;}
     *{box-sizing:border-box}
@@ -14,7 +23,7 @@
     .logo{width:min(360px,86vw);height:auto;margin:0 auto 18px;display:block}
     h1{margin:6px 0 10px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
     .lead{font-size:clamp(15px,2.6vw,18px);margin:0 auto 16px}
-    .icon{display:inline-block;width:52px;height:52px;vertical-align:middle;margin:12px 0 8px}
+    .icon{display:inline-block;width:60px;height:60px;vertical-align:middle;margin:12px 0 8px}
     .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--red);color:#fff;background:var(--red);text-decoration:none;font-weight:600}
     .btn--outline{background:#fff;color:var(--red)}
@@ -26,25 +35,39 @@
 <body>
   <main class="wrap">
     <section class="card" role="region" aria-label="Informace o dostupnosti webu">
-      <img src="logo.png" alt="Smart-security.cz logo" class="logo" />
+      <img src="/logo.png" alt="Smart-security.cz logo" class="logo" />
       <h1>Stránky jsou ve výstavbě</h1>
-      <!-- Ikona šroubováku -->
-      <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
-        <g>
-          <path d="M45 7l6 6-8 8-6-6 8-8z" fill="#cc0000"/>
-          <path d="M26 22l6 6L9 51 3 61 13 55 38 32l6 6 4-4-18-18-4 4z" fill="#111111"/>
-        </g>
+
+      <!-- Improved flat screwdriver icon -->
+      <svg class="icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#e60000"/>
+            <stop offset="1" stop-color="#b30000"/>
+          </linearGradient>
+        </defs>
+        <!-- Handle -->
+        <rect x="6" y="26" width="28" height="12" rx="6" fill="url(#g1)" />
+        <rect x="10" y="28" width="8" height="8" rx="3" fill="#ffffff" opacity=".25"/>
+        <!-- Shaft -->
+        <rect x="30" y="29" width="20" height="6" rx="3" fill="#222"/>
+        <!-- Tip -->
+        <path d="M58,32 l-6,6 h-4 l4-6 l-4-6 h4 z" fill="#444"/>
       </svg>
+
       <p class="lead">Máte zájem o montáž nebo dodání kamerového systému? Zavolejte mi nebo napište a rád vám připravím nezávaznou nabídku.</p>
+
       <div class="links">
         <a class="btn" href="tel:+420602783121">Zavolat</a>
         <a class="btn btn--outline" href="mailto:info@smart-security.cz">Napsat e‑mail</a>
       </div>
+
       <div class="contact">
         <div><strong>Lukáš Kadleček</strong></div>
         <div>📞 <a href="tel:+420602783121">+420 602 783 121</a></div>
         <div>📧 <a href="mailto:info@smart-security.cz">info@smart-security.cz</a></div>
       </div>
+
       <footer>© Smart-security.cz</footer>
     </section>
   </main>
