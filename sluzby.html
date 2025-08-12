@@ -57,6 +57,24 @@
     .lead{line-height:1.7}
     
     .brand .red{color:var(--red)}
+  
+    /* Floating contact bubble */
+    .contact-bubble{position:fixed;right:20px;bottom:20px;z-index:9999}
+    .contact-bubble button{width:56px;height:56px;border-radius:999px;border:none;background:var(--red);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    .contact-panel{position:fixed;right:20px;bottom:86px;width:360px;max-width:94vw;background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.18);padding:16px;z-index:9999;display:none}
+    .contact-panel h3{margin:0 0 8px;font-size:18px;color:#111;text-align:center}
+    .contact-panel .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .contact-panel .grid .full{grid-column:1 / -1}
+    .contact-panel label{display:block;font-size:13px;color:#444;margin:4px 0 4px}
+    .contact-panel input,.contact-panel textarea{width:100%;padding:9px 11px;border:1px solid #ddd;border-radius:10px;font:inherit}
+    .contact-panel textarea{min-height:90px;resize:vertical}
+    .contact-panel .actions{display:flex;justify-content:center;margin-top:10px}
+    .contact-panel .actions button{padding:10px 16px;border-radius:999px;border:1px solid var(--red);background:var(--red);color:#fff;font-weight:600;cursor:pointer}
+    .contact-panel .status{font-size:13px;text-align:center;margin-top:6px;color:#444}
+    @media (max-width: 640px){
+      .contact-panel{right:3vw;width:94vw}
+    }
+
   </style>
 </head>
 <body>
@@ -90,5 +108,71 @@
     </div>
   </section>
 </div>
+
+  <div class="contact-bubble" aria-live="polite">
+    <button id="bubble-toggle" aria-expanded="false" aria-controls="contact-panel" title="Rychlý kontakt">✉</button>
+  </div>
+  <div id="contact-panel" class="contact-panel" role="dialog" aria-modal="false" aria-labelledby="contact-title">
+    <h3 id="contact-title">Rychlý kontakt</h3>
+    <form id="bubble-form" action="https://formspree.io/f/xjkolavy" method="POST">
+      <div class="grid">
+        <div>
+          <label for="bname">Jméno</label>
+          <input id="bname" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="bphone">Telefon (volitelné)</label>
+          <input id="bphone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="full">
+          <label for="bemail">E‑mail</label>
+          <input id="bemail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="full">
+          <label for="bmessage">Zpráva</label>
+          <textarea id="bmessage" name="message" required placeholder="Napište, s čím potřebujete pomoct…"></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" style="display:none">
+        <input type="hidden" name="_subject" value="Rychlý kontakt — Smart-security.cz">
+      </div>
+      <div class="actions"><button type="submit">Odeslat</button></div>
+      <div class="status" id="bubble-status"></div>
+    </form>
+  </div>
+  <script>
+  (function(){
+    const toggle = document.getElementById('bubble-toggle');
+    const panel  = document.getElementById('contact-panel');
+    const form   = document.getElementById('bubble-form');
+    const status = document.getElementById('bubble-status');
+    if(toggle && panel){
+      toggle.addEventListener('click', ()=>{
+        const open = panel.style.display === 'block';
+        panel.style.display = open ? 'none' : 'block';
+        toggle.setAttribute('aria-expanded', String(!open));
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && panel.style.display === 'block'){
+          panel.style.display = 'none';
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+    if(form){
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        status.textContent = 'Odesílám…';
+        try{
+          const data = new FormData(form);
+          const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          const txt = await res.text(); let payload={}; try{payload=JSON.parse(txt)}catch(_){payload={raw:txt}}
+          if(res.ok){ form.reset(); status.textContent = 'Děkujeme! Brzy se vám ozveme.'; }
+          else { status.textContent = 'Chyba ('+res.status+'): ' + (payload?.errors?.[0]?.message || payload?.message || 'Nepodařilo se odeslat.'); }
+        }catch(err){ status.textContent = 'Chyba připojení. Zkuste to prosím znovu.'; }
+      });
+    }
+  })();
+  </script>
+
 </body>
 </html>
