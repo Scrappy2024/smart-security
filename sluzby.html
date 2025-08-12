@@ -79,20 +79,50 @@
     .contact-bubble button{display:flex;align-items:center;justify-content:center}
     .contact-bubble button svg{width:28px;height:28px;display:block}
 
+  
+    .nav{max-width:900px;margin:12px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+    .nav .brand{font-weight:700;text-decoration:none;color:#111}
+    .brand .red{color:var(--red)}
+    .menu-btn{display:none;background:#fff;border:1px solid #eee;border-radius:10px;padding:6px 10px;cursor:pointer;font-size:18px}
+    .navlinks{display:flex;gap:14px}
+    .navlinks a{text-decoration:none;color:#111;border-bottom:1px solid transparent;padding-bottom:2px}
+    .navlinks a:hover{border-bottom-color:rgba(204,0,0,.5)}
+    @media (max-width: 800px){
+      .menu-btn{display:block}
+      .navlinks{position:absolute;top:56px;right:12px;background:#fff;border:1px solid #eee;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.12);padding:10px 12px;display:none;flex-direction:column;gap:10px;z-index:9999}
+      .navlinks.open{display:flex}
+    }
+
   </style>
 </head>
 <body>
 
-    <nav class="nav">
-      <a href="/" class="brand">Smart‑<span class="red">security</span>.cz</a>
-      <div class="navlinks">
-        <a href="/sluzby.html">Služby</a>
-        <a href="/eshop.html">E‑shop</a>
-        <a href="/pusobnost.html">Působnost</a>
-        <a href="/kontakt.html">Kontakt</a>
-      </div>
-    </nav>
-
+    
+<nav class="nav" role="navigation" aria-label="Hlavní navigace">
+  <a href="/" class="brand">Smart‑<span class="red">security</span>.cz</a>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-menu" aria-label="Menu">☰</button>
+  <div class="navlinks" id="main-menu">
+    <a href="/eshop.html">E‑shop</a>
+    <a href="/sluzby.html">Služby</a>
+    <a href="/pusobnost.html">Působnost</a>
+    <a href="/kontakt.html">Kontakt</a>
+  </div>
+</nav>
+<script>
+(function(){
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('main-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', ()=>{
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  // Close on link click (mobile)
+  menu.addEventListener('click', (e)=>{
+    if(e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  });
+})();
+</script>
 <div class="container">
   <section class="page">
     <div class="inner">
