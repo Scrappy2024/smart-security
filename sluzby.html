@@ -75,6 +75,10 @@
       .contact-panel{right:3vw;width:94vw}
     }
 
+  
+    .contact-bubble button{display:flex;align-items:center;justify-content:center}
+    .contact-bubble button svg{width:28px;height:28px;display:block}
+
   </style>
 </head>
 <body>
@@ -110,9 +114,12 @@
 </div>
 
   <div class="contact-bubble" aria-live="polite">
-    <button id="bubble-toggle" aria-expanded="false" aria-controls="contact-panel" title="Rychlý kontakt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M4 4h16v16H4z" fill="none"/>
-  <polyline points="4,4 12,13 20,4" />
+    <button id="bubble-toggle" aria-expanded="false" aria-controls="contact-panel" title="Rychlý kontakt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+  fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+  <path d="M3 7l9 7 9-7" />
+  <path d="M3 19l6-6" />
+  <path d="M21 19l-6-6" />
 </svg></button>
   </div>
   <div id="contact-panel" class="contact-panel" role="dialog" aria-modal="false" aria-labelledby="contact-title">
