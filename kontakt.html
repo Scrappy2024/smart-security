@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Smart-security.cz — Stránky jsou ve výstavbě</title>
-  <meta name="description" content="Stránky Smart-security.cz jsou ve výstavbě. Kontaktujte nás pro nezávaznou nabídku nebo konzultaci ohledně kamerových systémů.">
+  <title>Kontakt — Smart-security.cz</title>
+  <meta name="description" content="Kontakt — Smart-security.cz — Smart-security.cz">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#cc0000">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Smart-security.cz — Ve výstavbě">
-  <meta property="og:description" content="Máte zájem o montáž nebo dodání kamerového systému? Zavolejte nebo napište — rádi připravíme nezávaznou nabídku.">
-  <meta property="og:image" content="/logo.png">
-  <meta property="og:url" content="https://smart-security.cz/">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
@@ -52,7 +47,15 @@
     .navlinks{display:flex;gap:14px}
     .navlinks a{text-decoration:none;color:#111;border-bottom:1px solid transparent;padding-bottom:2px}
     .navlinks a:hover{border-bottom-color:rgba(204,0,0,.5)}
-  </style>
+    .container{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+    .page{width:100%;max-width:900px;border:1px solid #eee;border-radius:20px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .page .inner{padding:22px 22px 24px}
+    .page h1{margin:6px 0 10px;font-size:clamp(22px,3.2vw,30px);color:var(--red)}
+    .page p{margin:8px 0 8px}
+    .page ul{margin:8px 0 8px;padding-left:20px}
+    .muted{color:#6b7280}
+    .lead{line-height:1.7}
+    </style>
 </head>
 <body>
 
@@ -65,48 +68,15 @@
       </div>
     </nav>
 
-  <main class="wrap">
-    <section class="card" role="region" aria-label="Informace o dostupnosti webu">
-      <img src="/logo.png" alt="Smart-security.cz logo" class="logo" />
-      <h1>Stránky ve výstavbě</h1>
-      
+<div class="container">
+  <section class="page">
+    <div class="inner">
 
+      <h1>Kontakt</h1>
+      <p class="lead">Napište nám přes formulář nebo využijte přímý kontakt níže. Ozveme se co nejdříve.</p>
 
-
-
-
-
-
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-  <img src="/A15.png" alt="Práce na silnici – dopravní značka A15" style="width:68px;height:auto;image-rendering:auto;";height:auto;image-rendering:auto;" />
-  <svg class="barrier" viewBox="0 0 100 40" aria-hidden="true" focusable="false" style="width:96px;height:auto;">
-    <defs>
-      <pattern id="stripes" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(-20)">
-        <rect width="6" height="12" fill="#cc0000"/>
-        <rect x="6" width="6" height="12" fill="#ffffff"/>
-      </pattern>
-    </defs>
-    <rect x="0" y="0" width="100" height="15" fill="url(#stripes)" stroke="#111" stroke-width="2"/>
-    <rect x="10" y="15" width="8" height="20" fill="#111"/>
-    <rect x="82" y="15" width="8" height="20" fill="#111"/>
-  </svg>
-</div>
-
-
-
-
-
-
-
-
-      <p class="lead">Máte zájem o montáž nebo dodání kamerového systému? Zavolejte mi nebo napište a rád vám připravím nezávaznou nabídku.</p>
-      <div class="links">
-        <a class="btn" href="tel:+420702026196">Zavolat</a>
-        <a class="btn btn--outline" href="mailto:admin@smart-security.cz">Napsat e‑mail</a>
-      
-      <form class="form" id="contact-form" action="https://formspree.io/f/xjkolavy_FORM_ID" method="POST">
-        <h2>Rychlý kontakt</h2>
-        <div class="grid">
+      <form class="form" id="contact-form" action="https://formspree.io/f/xjkolavy_FORM_ID" method="POST" style="max-width:720px;margin:12px auto 6px">
+        <div class="grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div>
             <label for="name">Jméno</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
@@ -115,25 +85,28 @@
             <label for="phone">Telefon (volitelné)</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel">
           </div>
-          <div class="full">
+          <div class="full" style="grid-column:1 / -1">
             <label for="email">E‑mail</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
-          <div class="full">
+          <div class="full" style="grid-column:1 / -1">
             <label for="message">Zpráva</label>
             <textarea id="message" name="message" required placeholder="Napište, s čím potřebujete pomoct…"></textarea>
           </div>
-          <!-- Honeypot -->
-          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
-          <!-- Subject (optional) -->
-          <input type="hidden" name="_subject" value="Nová poptávka — Smart-security.cz">
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" style="display:none">
+          <input type="hidden" name="_subject" value="Zpráva z kontaktní stránky — Smart-security.cz">
         </div>
-        <div class="actions">
-          <button type="submit">Odeslat</button>
+        <div class="actions" style="display:flex;justify-content:center;margin-top:10px">
+          <button type="submit" style="padding:10px 18px;border-radius:999px;border:1px solid var(--red);background:var(--red);color:#fff;font-weight:600;cursor:pointer">Odeslat</button>
         </div>
-        <div class="status" id="form-status"></div>
-        <div class="note">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky. Nikomu je nepředáváme.</div>
+        <div class="status" id="form-status" style="text-align:center;margin-top:8px"></div>
+        <div class="muted" style="font-size:12px;text-align:center;margin-top:6px">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</div>
       </form>
+
+      <div style="text-align:center;margin-top:14px">
+        <div style="margin:6px 0"><strong>Telefon:</strong> <a href="tel:+420702026196">+420&nbsp;702&nbsp;026&nbsp;196</a></div>
+        <div style="margin:6px 0"><strong>E‑mail:</strong> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
+      </div>
 
       <script>
       (function(){
@@ -146,25 +119,16 @@
           try{
             const data = new FormData(form);
             const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-            if (res.ok) {
-              form.reset();
-              status.textContent = 'Děkujeme! Brzy se vám ozveme.';
-            } else {
-              status.textContent = 'Nepodařilo se odeslat. Zkuste to prosím znovu.';
-            }
-          }catch(err){
-            status.textContent = 'Chyba připojení. Zkuste to prosím znovu.';
-          }
+            if (res.ok) { form.reset(); status.textContent = 'Děkujeme! Brzy se vám ozveme.'; }
+            else { status.textContent = 'Nepodařilo se odeslat. Zkuste to prosím znovu.'; }
+          }catch(err){ status.textContent = 'Chyba připojení. Zkuste to prosím znovu.'; }
         });
       })();
       </script>
 
-      <div class="contact">
-        <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420 702 026 196</a></div>
-        <div><span class="emoji">📧</span> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
-      </div>
-      <footer>© Smart-security.cz</footer>
-    </section>
-  </main>
+      <footer class="muted" style="text-align:center;margin-top:14px">© Smart-security.cz</footer>
+    </div>
+  </section>
+</div>
 </body>
 </html>

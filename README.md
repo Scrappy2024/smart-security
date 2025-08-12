@@ -1,14 +1,20 @@
-# Smart Security – Stránka ve výstavbě
+# Smart‑security.cz — statická „ve výstavbě“ stránka (GitHub Pages)
 
-Tato stránka je dočasná a slouží k informování návštěvníků, že web e‑shopu Smart Security je aktuálně ve výstavbě.
+Tento balíček obsahuje homepage a tři podstránky:
+- `/sluzby.html` — přehled poskytovaných služeb
+- `/pusobnost.html` — oblasti působnosti
+- `/kontakt.html` — kontaktní formulář (Formspree) + kontakty
 
-## Obsah
-- Logo a značka „Stránky ve výstavbě“
-- Ilustrace (dopravní značka A15 + závora)
-- Kontaktní údaje pro nezávaznou nabídku nebo konzultaci ohledně montáže či dodání kamerového systému
+## Rychlé nasazení
+1. Nahrajte všechny soubory do kořene repozitáře (branch `main`).
+2. V **Settings → Pages** zvolte *Deploy from a branch* → `main` → `/ (root)`.
+3. V **Custom domain** nastavte `smart-security.cz` a zapněte **Enforce HTTPS**.
 
-## Kontakt
-- Telefon: +420 702 026 196
-- E‑mail: info@smart-security.cz
+## Formspree (kontaktní formulář)
+- V souboru `kontakt.html` (a na homepage) nahraďte `action="https://formspree.io/f/xjkolavy_FORM_ID"` svým Form ID (např. `f/abcdwxyz`).  
+- Poté commitujte a otestujte odeslání (zobrazí se stavová hláška).
 
-© Smart Security
+## Indexace (až bude web hotový)
+- Změňte v `<head>` meta robots na `index,follow` a upravte/smažte `robots.txt` (odstranit `Disallow: /`).
+
+© Smart‑security.cz
