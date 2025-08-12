@@ -60,6 +60,10 @@
     .map{max-width:100%;height:auto;border-radius:14px;border:1px solid #eee;box-shadow:0 6px 18px rgba(0,0,0,.05)}
   
     .brand .red{color:var(--red)}
+  
+    .city-list{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+    @media (max-width:768px){.city-list{grid-template-columns:repeat(2,1fr)}}
+    .city-list li{list-style:disc;margin-left:20px}
   </style>
 </head>
 <body>
@@ -79,7 +83,7 @@
 
       <h1>Působnost</h1>
       <p class="lead">Působíme převážně ve Středočeském kraji, Praze a přilehlých regionech. Standardně dojíždíme do vzdálenosti 100&nbsp;km od našeho sídla, další lokality dle individuální dohody.</p>
-      <ul>
+      <ul class="city-list">
   <li>Praha</li>
   <li>Benešov</li>
   <li>Vlašim</li>
