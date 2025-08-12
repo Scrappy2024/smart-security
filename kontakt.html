@@ -55,7 +55,15 @@
     .page ul{margin:8px 0 8px;padding-left:20px}
     .muted{color:#6b7280}
     .lead{line-height:1.7}
-    </style>
+    
+    .contact-wrap{max-width:900px;margin:0 auto;display:grid;gap:18px}
+    @media (min-width: 900px){
+      .contact-wrap{grid-template-columns: 1.6fr 1fr;align-items:start}
+      .form{margin:0 auto 0 0}
+      .contact{margin-top:0;border-left:1px solid #eee;padding-left:22px}
+    }
+
+</style>
 </head>
 <body>
 
@@ -75,7 +83,8 @@
       <h1>Kontakt</h1>
       <p class="lead">Napište nám přes formulář nebo využijte přímý kontakt níže. Ozveme se co nejdříve.</p>
 
-      <form class="form" id="contact-form" action="https://formspree.io/f/xjkolavy_FORM_ID" method="POST" style="max-width:720px;margin:12px auto 6px">
+      <div class="contact-wrap">
+<form class="form" id="contact-form" action="https://formspree.io/f/xjkolavy_FORM_ID" method="POST" style="max-width:720px;margin:12px auto 6px">
         <div class="grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div>
             <label for="name">Jméno</label>
@@ -103,8 +112,10 @@
         <div class="muted" style="font-size:12px;text-align:center;margin-top:6px">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</div>
       </form>
 
-      <div style="text-align:center;margin-top:14px">
+      
+<div style="text-align:center;margin-top:14px">
         <div style="margin:6px 0"><strong>Telefon:</strong> <a href="tel:+420702026196">+420&nbsp;702&nbsp;026&nbsp;196</a></div>
+</div>
         <div style="margin:6px 0"><strong>E‑mail:</strong> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
       </div>
 
