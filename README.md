@@ -18,3 +18,7 @@ Tento balíček obsahuje homepage a tři podstránky:
 - Změňte v `<head>` meta robots na `index,follow` a upravte/smažte `robots.txt` (odstranit `Disallow: /`).
 
 © Smart‑security.cz
+
+
+## Mapa působnosti
+- Nahrajte soubor s mapou jako `mapa.png` do kořene repozitáře. Bude se zobrazovat na `/pusobnost.html`.
