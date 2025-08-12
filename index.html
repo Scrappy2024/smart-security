@@ -20,16 +20,19 @@
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#fff;color:#111;line-height:1.5}
     .wrap{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:48px 20px}
     .card{width:100%;max-width:780px;text-align:center;border:1px solid #eee;border-radius:20px;padding:32px 24px 28px;box-shadow:0 8px 24px rgba(0,0,0,.06);background:#fff}
-    .logo{width:min(300px,80vw);height:auto;margin:4px auto 6px;display:block}
-    h1{margin:2px 0 6px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
-    .lead{font-size:clamp(15px,2.6vw,18px);margin:0 auto 16px}
+    .logo{width:min(300px,80vw);height:auto;margin:2px auto 4px;display:block}
+    h1{margin:6px 0 8px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
+    .lead{font-size:clamp(15px,2.6vw,18px);margin:10px auto 14px;line-height:1.7;max-width:720px}
     .icon{display:inline-block;width:58px;height:67px;vertical-align:middle;margin:8px 0 6px}
     .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--red);color:#fff;background:var(--red);text-decoration:none;font-weight:600}
     .btn--outline{background:#fff;color:var(--red)}
-    .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:var(--gray);font-size:16px}
+    .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:var(--gray);font-size:16px display:flex; flex-direction:column; gap:8px}
     .contact a{color:#111;text-decoration:none;border-bottom:1px solid rgba(204,0,0,.3);padding-bottom:1px}
     footer{text-align:center;color:#999;font-size:12px;margin-top:18px}
+    .contact > div{display:flex;align-items:center;gap:8px;justify-content:center}
+    .contact .emoji{font-size:18px;line-height:1}
+
   </style>
 </head>
 <body>
@@ -45,9 +48,9 @@
 
 
 
-<div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-  <img src="/A15.png" alt="Práce na silnici – dopravní značka A15" style="width:75px;height:auto;image-rendering:auto;";height:auto;image-rendering:auto;" />
-  <svg class="barrier" viewBox="0 0 100 40" aria-hidden="true" focusable="false" style="width:110px;height:auto;">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+  <img src="/A15.png" alt="Práce na silnici – dopravní značka A15" style="width:68px;height:auto;image-rendering:auto;";height:auto;image-rendering:auto;" />
+  <svg class="barrier" viewBox="0 0 100 40" aria-hidden="true" focusable="false" style="width:96px;height:auto;">
     <defs>
       <pattern id="stripes" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(-20)">
         <rect width="6" height="12" fill="#cc0000"/>
@@ -73,8 +76,8 @@
         <a class="btn btn--outline" href="mailto:info@smart-security.cz">Napsat e‑mail</a>
       </div>
       <div class="contact">
-        <div>📞 <a href="tel:+420702026196">+420 702 026 196</a></div>
-        <div>📧 <a href="mailto:info@smart-security.cz">info@smart-security.cz</a></div>
+        <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420 702 026 196</a></div>
+        <div><span class="emoji">📧</span> <a href="mailto:info@smart-security.cz">info@smart-security.cz</a></div>
       </div>
       <footer>© Smart-security.cz</footer>
     </section>
