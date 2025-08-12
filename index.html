@@ -27,14 +27,14 @@
     .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--red);color:#fff;background:var(--red);text-decoration:none;font-weight:600}
     .btn--outline{background:#fff;color:var(--red)}
-    .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:var(--gray);font-size:16px display:flex; flex-direction:column; gap:8px}
+    .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:#6b7280;font-size:16px;text-align:center}
     .contact a{color:#111;text-decoration:none;border-bottom:1px solid rgba(204,0,0,.3);padding-bottom:1px}
     footer{text-align:center;color:#999;font-size:12px;margin-top:18px}
-    .contact-wrap{max-width:900px;margin:0 auto;display:grid;gap:18px}
+    
     @media (min-width: 900px){
-      .contact-wrap{grid-template-columns: 1.6fr 1fr;align-items:start}
+      
       .form{margin:0 auto 0 0}
-      .contact{margin-top:0;border-left:1px solid #eee;padding-left:22px}
+      .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:#6b7280;font-size:16px;text-align:center}
     }
 
     .form{margin:18px auto 8px;max-width:680px;text-align:left}
@@ -161,10 +161,11 @@
       })();
       </script>
 
-      <div class="contact">
-        <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420 702 026 196</a></div>
+      
         <div><span class="emoji">📧</span> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
-      </div>
+      
+      <div class="contact">
+        <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420 702 026 196</a></div></div>
       <footer>© Smart-security.cz</footer>
     </section>
   </main>
