@@ -1,16 +1,199 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-shop</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E‑shop — Smart-security.cz</title>
+  <meta name="description" content="E‑shop — Smart-security.cz — Smart-security.cz">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#cc0000">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root{--red:#cc0000;--black:#111111;--gray:#6b7280;--bg:#ffffff;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#fff;color:#111;line-height:1.5}
+    .wrap{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:48px 20px}
+    .card{width:100%;max-width:780px;text-align:center;border:1px solid #eee;border-radius:20px;padding:32px 24px 28px;box-shadow:0 8px 24px rgba(0,0,0,.06);background:#fff}
+    .logo{width:min(300px,80vw);height:auto;margin:2px auto 4px;display:block}
+    h1{margin:6px 0 8px;font-size:clamp(24px,3.6vw,36px);color:var(--red);letter-spacing:.2px}
+    .lead{font-size:clamp(15px,2.6vw,18px);margin:10px auto 14px;line-height:1.7;max-width:720px}
+    .icon{display:inline-block;width:58px;height:67px;vertical-align:middle;margin:8px 0 6px}
+    .links{margin-top:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--red);color:#fff;background:var(--red);text-decoration:none;font-weight:600}
+    .btn--outline{background:#fff;color:var(--red)}
+    .contact{border-top:1px solid #eee;margin-top:14px;padding-top:16px;color:var(--gray);font-size:16px display:flex; flex-direction:column; gap:8px}
+    .contact a{color:#111;text-decoration:none;border-bottom:1px solid rgba(204,0,0,.3);padding-bottom:1px}
+    footer{text-align:center;color:#999;font-size:12px;margin-top:18px}
+    .form{margin:18px auto 8px;max-width:680px;text-align:left}
+    .form h2{font-size:20px;margin:8px 0 10px;text-align:center}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .grid .full{grid-column:1 / -1}
+    label{display:block;font-size:14px;color:#444;margin:6px 0 6px}
+    input, textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:10px;font:inherit}
+    textarea{min-height:110px;resize:vertical}
+    .form .note{font-size:12px;color:#6b7280;text-align:center;margin-top:8px}
+    .form .actions{display:flex;justify-content:center;margin-top:10px}
+    .form .actions button{padding:10px 18px;border-radius:999px;border:1px solid var(--red);background:var(--red);color:#fff;font-weight:600;cursor:pointer}
+    .hidden{display:none !important}
+    .status{font-size:14px;text-align:center;margin-top:8px}
+
+    .contact > div{display:flex;align-items:center;gap:8px;justify-content:center}
+    .contact .emoji{font-size:18px;line-height:1}
+
+  
+    .nav{max-width:900px;margin:12px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+    .nav .brand{font-weight:700;text-decoration:none;color:#111}
+    .navlinks{display:flex;gap:14px}
+    .navlinks a{text-decoration:none;color:#111;border-bottom:1px solid transparent;padding-bottom:2px}
+    .navlinks a:hover{border-bottom-color:rgba(204,0,0,.5)}
+    .container{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+    .page{width:100%;max-width:900px;border:1px solid #eee;border-radius:20px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .page .inner{padding:22px 22px 24px}
+    .page h1{margin:6px 0 10px;font-size:clamp(22px,3.2vw,30px);color:var(--red)}
+    .page p{margin:8px 0 8px}
+    .page ul{margin:8px 0 8px;padding-left:20px}
+    .muted{color:#6b7280}
+    .lead{line-height:1.7}
+    
+    .mapwrap{margin:14px 0 6px;display:flex;justify-content:center}
+    .map{max-width:100%;height:auto;border-radius:14px;border:1px solid #eee;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+  
+    .brand .red{color:var(--red)}
+  
+    .city-list{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+    @media (max-width:768px){.city-list{grid-template-columns:repeat(2,1fr)}}
+    .city-list li{list-style:disc;margin-left:20px}
+  
+    /* Floating contact bubble */
+    .contact-bubble{position:fixed;right:20px;bottom:20px;z-index:9999}
+    .contact-bubble button{width:56px;height:56px;border-radius:999px;border:none;background:var(--red);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    .contact-panel{position:fixed;right:20px;bottom:86px;width:360px;max-width:94vw;background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.18);padding:16px;z-index:9999;display:none}
+    .contact-panel h3{margin:0 0 8px;font-size:18px;color:#111;text-align:center}
+    .contact-panel .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .contact-panel .grid .full{grid-column:1 / -1}
+    .contact-panel label{display:block;font-size:13px;color:#444;margin:4px 0 4px}
+    .contact-panel input,.contact-panel textarea{width:100%;padding:9px 11px;border:1px solid #ddd;border-radius:10px;font:inherit}
+    .contact-panel textarea{min-height:90px;resize:vertical}
+    .contact-panel .actions{display:flex;justify-content:center;margin-top:10px}
+    .contact-panel .actions button{padding:10px 16px;border-radius:999px;border:1px solid var(--red);background:var(--red);color:#fff;font-weight:600;cursor:pointer}
+    .contact-panel .status{font-size:13px;text-align:center;margin-top:6px;color:#444}
+    @media (max-width: 640px){
+      .contact-panel{right:3vw;width:94vw}
+    }
+
+  
+    .contact-bubble button{display:flex;align-items:center;justify-content:center}
+    .contact-bubble button svg{width:28px;height:28px;display:block}
+
+  </style>
 </head>
 <body>
-    <header>
-        <h1 class="title-red">Připravujeme</h1>
-        <p>Na našem e-shopu pracujeme. Brzy zde najdete sortiment kamerových a zabezpečovacích systémů.</p>
-        <img src="A15.png" alt="Výstražná značka" style="max-width:150px; margin-top: 20px;">
-    </header>
+
+    <nav class="nav">
+      <a href="/" class="brand">Smart‑<span class="red">security</span>.cz</a>
+      <div class="navlinks">
+        <a href="/sluzby.html">Služby</a>
+        <a href="/eshop.html">E‑shop</a>
+        <a href="/pusobnost.html">Působnost</a>
+        <a href="/kontakt.html">Kontakt</a>
+      </div>
+    </nav>
+
+<div class="container">
+  <section class="page">
+    <div class="inner">
+
+      <h1>Připravujeme</h1>
+      <p class="lead" style="text-align:center">Na našem e‑shopu pracujeme. Brzy zde najdete sortiment kamerových a zabezpečovacích systémů.</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin:10px 0 8px">
+        <img src="/A15.png" alt="Práce na silnici – dopravní značka A15" style="width:75px;height:auto;image-rendering:auto;" />
+        <svg class="barrier" viewBox="0 0 100 40" aria-hidden="true" focusable="false" style="width:96px;height:auto;">
+          <defs>
+            <pattern id="stripes" patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(-20)">
+              <rect width="6" height="12" fill="#cc0000"/>
+              <rect x="6" width="6" height="12" fill="#ffffff"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="100" height="15" fill="url(#stripes)" stroke="#111" stroke-width="2"/>
+          <rect x="10" y="15" width="8" height="20" fill="#111"/>
+          <rect x="82" y="15" width="8" height="20" fill="#111"/>
+        </svg>
+      </div>
+</div>
+  </section>
+</div>
+
+  <div class="contact-bubble" aria-live="polite">
+    <button id="bubble-toggle" aria-expanded="false" aria-controls="contact-panel" title="Rychlý kontakt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+  fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+  <path d="M3 7l9 7 9-7" />
+  <path d="M3 19l6-6" />
+  <path d="M21 19l-6-6" />
+</svg></button>
+  </div>
+  <div id="contact-panel" class="contact-panel" role="dialog" aria-modal="false" aria-labelledby="contact-title">
+    <h3 id="contact-title">Rychlý kontakt</h3>
+    <form id="bubble-form" action="https://formspree.io/f/xjkolavy" method="POST">
+      <div class="grid">
+        <div>
+          <label for="bname">Jméno</label>
+          <input id="bname" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="bphone">Telefon (volitelné)</label>
+          <input id="bphone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="full">
+          <label for="bemail">E‑mail</label>
+          <input id="bemail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="full">
+          <label for="bmessage">Zpráva</label>
+          <textarea id="bmessage" name="message" required placeholder="Napište, s čím potřebujete pomoct…"></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" style="display:none">
+        <input type="hidden" name="_subject" value="Rychlý kontakt — Smart-security.cz">
+      </div>
+      <div class="actions"><button type="submit">Odeslat</button></div>
+      <div class="status" id="bubble-status"></div>
+    </form>
+  </div>
+  <script>
+  (function(){
+    const toggle = document.getElementById('bubble-toggle');
+    const panel  = document.getElementById('contact-panel');
+    const form   = document.getElementById('bubble-form');
+    const status = document.getElementById('bubble-status');
+    if(toggle && panel){
+      toggle.addEventListener('click', ()=>{
+        const open = panel.style.display === 'block';
+        panel.style.display = open ? 'none' : 'block';
+        toggle.setAttribute('aria-expanded', String(!open));
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && panel.style.display === 'block'){
+          panel.style.display = 'none';
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+    if(form){
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        status.textContent = 'Odesílám…';
+        try{
+          const data = new FormData(form);
+          const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          const txt = await res.text(); let payload={}; try{payload=JSON.parse(txt)}catch(_){payload={raw:txt}}
+          if(res.ok){ form.reset(); status.textContent = 'Děkujeme! Brzy se vám ozveme.'; }
+          else { status.textContent = 'Chyba ('+res.status+'): ' + (payload?.errors?.[0]?.message || payload?.message || 'Nepodařilo se odeslat.'); }
+        }catch(err){ status.textContent = 'Chyba připojení. Zkuste to prosím znovu.'; }
+      });
+    }
+  })();
+  </script>
+
 </body>
 </html>
