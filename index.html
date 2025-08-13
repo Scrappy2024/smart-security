@@ -164,39 +164,12 @@
 
       <p class="lead">Máte zájem o montáž nebo dodání kamerového systému? Zavolejte mi nebo napište a rád vám připravím nezávaznou nabídku.</p>
       <div class="links">
-        <a class="btn" href="tel:+420702026196">Zavolat</a>
-        <a class="btn btn--outline" href="mailto:admin@smart-security.cz">Napsat e‑mail</a>
-      
-      <script>
-      (function(){
-        const form = document.getElementById('contact-form');
-        const status = document.getElementById('form-status');
-        if(!form) return;
-        form.addEventListener('submit', async (e)=>{
-          e.preventDefault();
-          status.textContent = 'Odesílám…';
-          try{
-            const data = new FormData(form);
-            const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-            const txt = await res.text();
-            try { var payload = JSON.parse(txt); } catch(e){ payload = { raw: txt }; }
-            if (res.ok) {
-              form.reset();
-              status.textContent = 'Děkujeme! Brzy se vám ozveme.';
-            } else {
-              status.textContent = 'Chyba ('+res.status+'): ' + (payload?.errors?.[0]?.message || payload?.message || 'Nepodařilo se odeslat.');
-            }
-          }catch(err){
-            status.textContent = 'Chyba připojení. Zkuste to prosím znovu.';
-          }
-        });
-      })();
-      </script>
-
-      
-        <div><span class="emoji">📧</span> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
-
-      <div class="contact">
+  <a class="btn" href="tel:+420702026196">Zavolat</a>
+  <a class="btn btn--outline" href="mailto:admin@smart-security.cz">Napsat e‑mail</a>
+</div>
+<div class="contact">
+        <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420&nbsp;702&nbsp;026&nbsp;196</a></div>
+<div class="contact">
         <div><span class="emoji">📞</span> <a href="tel:+420702026196">+420&nbsp;702&nbsp;026&nbsp;196</a></div>
         <div><span class="emoji">📧</span> <a href="mailto:admin@smart-security.cz">admin@smart-security.cz</a></div>
       </div>
